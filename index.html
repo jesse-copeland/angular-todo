@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <title>Angular Todo</title>
 </head>
-<body ng-app>
+<body ng-app="TodoApp">
 
-  <h1 ng-model="title">{{title}}</h1>
-  <input type="text" ng-model="title">
+  <div ng-controller="TodoCtrl">
+    <h1>Todo App</h1>
+
+    <input type="text" ng-model="new_todo" ng-keypress="enterTodo($event)">
+    <button ng-click="saveTodo(new_todo)">New Todo</button>
+
+    <div>
+      <label for="searchInput">Search:</label>
+      <input id="searchInput" type="text" ng-model="searchQuery">
+    </div>
+    <ul>
+      <li ng-repeat="todo in todos | filter:searchQuery">
+        <input type="checkbox" ng-checked="todo.completed">
+        <span class="title">{{todo.title}}</span>
+      </li>
+    </ul>    
+  </div>
 
   <script src="/bower_components/angular/angular.min.js"></script>
   <script src="/app.js"></script>
