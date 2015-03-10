@@ -1,7 +1,10 @@
 angular
   .module('TodoApp', [])
-  .controller('TodoCtrl', ['$scope', function($scope){
-    $scope.todos = [];
+  .controller('TodoCtrl', ['$scope','TodoService', function($scope, TodoService){
+    
+    TodoService.getAll().then(function (response) {
+      $scope.todos = response.data;
+    });
 
     $scope.saveTodo = function (new_title) {
       $scope.todos.push({

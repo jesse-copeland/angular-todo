@@ -37,31 +37,4 @@ router.delete('/:id', function (req, res) {
   });
 });
 
-
-// // complete todo
-// router.put('/:id/complete', function (req, res) {
-//   Todo.update(req.params.id,
-//   {
-//     $set: {
-//       completed: true
-//     }
-//   }, function (err, updateCount, result) {
-//     if (err) throw err;
-//     res.json(result);
-//   });
-// });
-
-// // uncomplete todo
-// router.put('/:id/uncomplete', function (req, res) {
-//   Todo.update(req.params.id,
-//   {
-//     $set: {
-//       completed: false
-//     }
-//   }, function (err, updateCount, result) {
-//     if (err) throw err;
-//     res.json(result);
-//   });
-// });
-
 module.exports = router;
