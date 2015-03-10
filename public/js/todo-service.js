@@ -2,6 +2,10 @@ angular
   .module('TodoApp')
   .service('TodoService', ['$http', function ($http) {
     this.getAll = function () {
-      $http.get('/api');
+      return $http.get('/api');
+    };
+
+    this.create = function (todo) {
+      return $http.post('/api', todo);
     };
   }]);

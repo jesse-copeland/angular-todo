@@ -8,8 +8,9 @@ var app = express();
 mongoose.connect('mongodb://localhost/angular_todo');
 
 // Middleware
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 // Routes
 app.use('/api', require('./controllers/api'));

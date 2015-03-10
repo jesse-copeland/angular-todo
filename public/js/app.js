@@ -12,6 +12,8 @@ angular
         completed: false
       });
       $scope.new_todo = "";
+
+      TodoService.create({title: new_title});
     };
 
     $scope.enterTodo = function ($event) {
