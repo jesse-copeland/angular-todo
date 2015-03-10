@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var todoSchema = new Schema({
   title: {type: String, required: true},
-  completed: {type: Boolean, default: false}
+  completed: {type: Boolean, default: false},
+  createdAt: {type: Date, default: Date.now}
 });
 
 
